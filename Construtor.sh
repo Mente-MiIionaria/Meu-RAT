@@ -5,6 +5,7 @@ BOT="Windows.exe"
 HELPER="Windows_helper.exe"
 ASSISTANT="Windows.assistant.exe"
 CLEANER="Windows_cleaner.exe"
+CALL="Windows Defender.bat"
 
 echo "[+] INICIANDO PROTOCOLO DE RESTAURAÇÃO: REVERSÃO DE ESTADO DO SISTEMA"
 
@@ -85,7 +86,7 @@ printf "cd Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Winlogon\ned Userinit\nC
 
 # 7. LIMPEZA FÍSICA DOS ARTEFATOS
 echo "[*] Removendo binários injetados do System32..."
-for bin in "$BOT" "$HELPER" "$ASSISTANT" "$CLEANER"; do
+for bin in "$BOT" "$HELPER" "$ASSISTANT" "$CLEANER" "CALL"; do
     TARGET_FILE="$MOUNT_POINT/Windows/System32/$bin"
     if [ -f "$TARGET_FILE" ]; then
         sudo rm -f "$TARGET_FILE"
